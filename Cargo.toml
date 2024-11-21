@@ -1,0 +1,15 @@
+[package]
+name = "keymanager-test"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rktk-keymanager = { path = "../rktk/lib/rktk-keymanager", features = [
+  "state",
+  "alloc",
+] }
+dhat = "0.3.3"
+ssmarshal = { version = "1.0.0", features = ["std"] }
+
+[features]
+dhat-heap = []

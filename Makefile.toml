@@ -1,0 +1,11 @@
+[tasks.run-ms]
+script = '''
+cargo build --release
+valgrind --tool=massif --massif-out-file=./target/massif.out ./target/release/keymanager-test
+massif-visualizer ./target/massif.out
+'''
+
+[tasks.run-dhat]
+script = '''
+cargo run --release --features dhat-heap
+'''
